@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- DP -->
+    <dimen name="x_large">48dp</dimen>
+    <dimen name="large">32dp</dimen>
+    <dimen name="medium_large">24dp</dimen>
+    <dimen name="medium">16dp</dimen>
+    <dimen name="medium_small">12dp</dimen>
+    <dimen name="small">8dp</dimen>
+    <dimen name="x_small">4dp</dimen>
+
+    <!-- SP -->
+    <dimen name="text_giant">26sp</dimen>
+    <dimen name="text_x_large">20sp</dimen>
+    <dimen name="text_large">17sp</dimen>
+    <dimen name="text_medium_large">15sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+
+    <!-- margins and paddings -->
+    <dimen name="default_padding">@dimen/medium</dimen>
+    <dimen name="default_margin">@dimen/medium</dimen>
+
+    <!-- cards -->
+    <dimen name="card_separation">@dimen/medium</dimen>
+    <dimen name="card_padding_big">@dimen/medium_large</dimen>
+    <dimen name="card_padding_medium">@dimen/medium</dimen>
+
+</resources>

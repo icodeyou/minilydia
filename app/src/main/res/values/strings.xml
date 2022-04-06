@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MiniLydia</string>
+    <string name="fragment_users_empty_list">Aucun utilisateur à afficher</string>
 </resources>
