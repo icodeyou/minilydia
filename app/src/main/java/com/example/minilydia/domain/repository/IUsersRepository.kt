@@ -1,6 +1,7 @@
 package com.example.minilydia.domain.repository
 
 import androidx.paging.PagedList
+import androidx.paging.PagingData
 import com.example.minilydia.domain.model.User
 import io.reactivex.Completable
 import io.reactivex.Observable

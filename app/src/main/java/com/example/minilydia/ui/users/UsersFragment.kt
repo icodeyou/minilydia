@@ -45,19 +45,20 @@ class UsersFragment : Fragment(R.layout.fragment_users), ActionsOnListUsers {
             adapter = usersAdapter
         }
 
-        usersAdapter.addLoadStateListener { loadState ->
+        /*usersAdapter.addLoadStateListener { loadState ->
             val isEmptyView = loadState.source.refresh is LoadState.NotLoading
                     && loadState.append.endOfPaginationReached
                     && usersAdapter.itemCount < 1
             recyclerView.visibility = if (isEmptyView) View.GONE else View.VISIBLE
             emptyView.visibility = if (isEmptyView) View.VISIBLE else View.GONE
-        }
+        }*/
     }
 
     private fun observeUsers() {
-        usersViewModel.users.observe(viewLifecycleOwner) { userPagingData ->
+        usersViewModel.users.observe(viewLifecycleOwner) { userPagedData ->
             Timber.i("Users value has changed. Submitting changes to adapter")
-            usersAdapter.submitData(lifecycle, userPagingData)
+            usersAdapter.submitList(userPagedData.data)
+            //usersAdapter.submitData(lifecycle, userPagingData)
         }
     }
 

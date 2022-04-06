@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.paging.PagedListAdapter
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minilydia.R
@@ -13,7 +14,7 @@ import com.facebook.drawee.view.SimpleDraweeView
 import timber.log.Timber
 
 class UsersAdapter(private val actionsOnListUsers: ActionsOnListUsers) :
-    PagingDataAdapter<User, UsersAdapter.UserViewHolder>(UserDiffCallback()) {
+    PagedListAdapter<User, UsersAdapter.UserViewHolder>(UserDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         Timber.d("Creating view holder for UsersAdapter")
