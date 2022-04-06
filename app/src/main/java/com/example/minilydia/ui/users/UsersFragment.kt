@@ -20,7 +20,7 @@ class UsersFragment : Fragment(R.layout.fragment_users), ActionsOnListUsers {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.d("HomeFragment has been created") // TODO
+        Timber.d("HomeFragment has been created")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
