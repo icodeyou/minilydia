@@ -8,6 +8,9 @@ import androidx.navigation.fragment.navArgs
 import com.example.minilydia.R
 import com.example.minilydia.domain.model.User
 import com.facebook.drawee.view.SimpleDraweeView
+import timber.log.Timber
+import java.text.SimpleDateFormat
+import java.util.*
 
 class UserDetailsFragment : Fragment(R.layout.fragment_user_detail) {
 
@@ -27,5 +30,15 @@ class UserDetailsFragment : Fragment(R.layout.fragment_user_detail) {
         view.findViewById<TextView>(R.id.detail_user_email).text = user.email
         view.findViewById<TextView>(R.id.detail_user_phone).text = user.phone
         view.findViewById<TextView>(R.id.detail_user_city).text = user.city
+
+        val registeredDate = Date(user.registered * 1000)
+        var prettyDate = ""
+        try {
+            prettyDate = SimpleDateFormat("dd/MM/yyyy", Locale.FRANCE).format(registeredDate)
+        } catch (e: Exception) {
+            Timber.e(e)
+        }
+        view.findViewById<TextView>(R.id.detail_user_registered).text = prettyDate
+
     }
 }

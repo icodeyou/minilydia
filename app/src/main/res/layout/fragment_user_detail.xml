@@ -104,7 +104,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Text"
-                tools:text="Lyon"/>
+                tools:text="Lyon"
+                android:layout_marginBottom="@dimen/default_margin"/>
+
+            <TextView
+                android:id="@+id/detail_user_registered_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_registered"
+                android:textAppearance="@style/Text.Header3" />
+
+            <TextView
+                android:id="@+id/detail_user_registered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Text"
+                tools:text="15/03/2022"/>
 
         </LinearLayout>
 
