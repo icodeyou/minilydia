@@ -35,8 +35,7 @@ class UsersAdapter(private val actionsOnListUsers: ActionsOnListUsers) :
             itemView.findViewById<SimpleDraweeView>(R.id.user_image).setImageURI(user.smallPicture)
 
             itemView.setOnClickListener {
-                Timber.i("User ${user.getFullName()} clicked in position $bindingAdapterPosition")
-                // TODO
+                actionsOnListUsers.navigateToUserDetail(user)
             }
         }
     }

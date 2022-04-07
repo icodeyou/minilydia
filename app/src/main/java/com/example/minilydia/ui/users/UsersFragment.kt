@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minilydia.R
@@ -82,9 +84,10 @@ class UsersFragment : Fragment(R.layout.fragment_users), ActionsOnListUsers {
         }
     }
 
-    override fun navigateToUserDetail(user: User, profilePicture: ImageView, position: Int) {
+    override fun navigateToUserDetail(user: User) {
         Timber.d("Click on user ${user.getFullName()}")
-        // TODO
+        val direction = UsersFragmentDirections.displayDetails(user)
+        findNavController().navigate(direction)
     }
 
 }

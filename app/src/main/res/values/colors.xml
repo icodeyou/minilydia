@@ -8,6 +8,10 @@
     <color name="colorSecondaryVariant">#a00037</color>
     <color name="colorOnSecondary">#FFFFFF</color>
 
+    <!-- Backgrounds -->
+    <color name="lightBackground">#F3F3F3</color>
+    <color name="darkBackground">#232323</color>
+
     <!-- Basic colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

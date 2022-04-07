@@ -9,5 +9,21 @@
         android:id="@+id/homeFragment"
         android:name="com.example.minilydia.ui.users.UsersFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_users" />
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/displayDetails"
+            app:destination="@id/userDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.example.minilydia.ui.userdetails.UserDetailsFragment"
+        android:label="UserDetailsFragment">
+        <argument
+            android:name="user"
+            app:argType="com.example.minilydia.domain.model.User" />
+    </fragment>
 </navigation>

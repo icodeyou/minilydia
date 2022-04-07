@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/user_image_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/colorPrimary">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/detail_user_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:roundedCornerRadius="10dp"
+            app:placeholderImage="@drawable/ic_account_white"
+            app:placeholderImageScaleType="fitXY"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/detail_username_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_firstname"
+                android:textAppearance="@style/Text.Header3" />
+
+            <TextView
+                android:id="@+id/detail_user_firstname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Text"
+                tools:text="Philippe"
+                android:layout_marginBottom="@dimen/default_margin"/>
+
+            <TextView
+                android:id="@+id/detail_surname_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_surname"
+                android:textAppearance="@style/Text.Header3" />
+
+            <TextView
+                android:id="@+id/detail_user_surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Text"
+                tools:text="Dupont"
+                android:layout_marginBottom="@dimen/default_margin"/>
+
+            <TextView
+                android:id="@+id/detail_user_email_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_email"
+                android:textAppearance="@style/Text.Header3" />
+
+            <TextView
+                android:id="@+id/detail_user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Text"
+                tools:text="philippe.dupont@example.com"
+                android:layout_marginBottom="@dimen/default_margin"/>
+
+            <TextView
+                android:id="@+id/detail_user_phone_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_phone"
+                android:textAppearance="@style/Text.Header3" />
+
+            <TextView
+                android:id="@+id/detail_user_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Text"
+                tools:text="07 70 70 70 70"
+                android:layout_marginBottom="@dimen/default_margin"/>
+
+            <TextView
+                android:id="@+id/detail_user_city_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_city"
+                android:textAppearance="@style/Text.Header3" />
+
+            <TextView
+                android:id="@+id/detail_user_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Text"
+                tools:text="Lyon"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MiniLydia</string>
     <string name="fragment_users_empty_list">Aucun utilisateur à afficher</string>
+    <string name="user_firstname">Firstname</string>
+    <string name="user_email">Email</string>
+    <string name="user_surname">Surname</string>
+    <string name="user_phone">Phone</string>
+    <string name="user_city">City</string>
 </resources>
