@@ -2,6 +2,7 @@ package com.example.minilydia.ui.userdetails
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
@@ -39,6 +40,20 @@ class UserDetailsFragment : Fragment(R.layout.fragment_user_detail) {
             Timber.e(e)
         }
         view.findViewById<TextView>(R.id.detail_user_registered).text = prettyDate
+
+        val genderImageResource = when (user.gender) {
+            "female" -> {
+                R.drawable.ic_female
+            }
+            "male" -> {
+                R.drawable.ic_male
+            }
+            else -> {
+                Timber.e("Gender is not recognized. Can't apply gender image")
+                return
+            }
+        }
+        view.findViewById<ImageView>(R.id.detail_user_icon_gender).setImageResource(genderImageResource)
 
     }
 }
