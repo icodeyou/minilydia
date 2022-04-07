@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-        print("HomeFragment has been created")
         Timber.d("HomeFragment has been created")
         initNavigation()
     }
