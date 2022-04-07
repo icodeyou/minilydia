@@ -1,8 +1,7 @@
 package com.example.minilydia.ui.common.utils
 
-sealed class Resource<out T> constructor(val data: T?, val refresh: Boolean, val error: Throwable?) {
-    class Success<out T>(data: T?, refresh: Boolean = false) : Resource<T>(data, refresh, null)
-    class Loading(refresh: Boolean = false) : Resource<Nothing>(null, refresh, null)
-    class Error(error: Throwable?) : Resource<Nothing>(null, false, error)
+sealed class Resource<out T : Any> {
+    data class Success<out T : Any>(val data: T) : Resource<T>()
+    data class Error(val error: Throwable) : Resource<Nothing>()
+    data class Loading(val refresh: Boolean = false) : Resource<Nothing>()
 }
-

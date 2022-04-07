@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 interface IUsersApi {
 
-    @GET("users")
+    @GET(" ")
     fun getUsers(
         @Query("page") page: Int = DEFAULT_PAGE,
         @Query("results") results: Int = DEFAULT_PAGE_SIZE,

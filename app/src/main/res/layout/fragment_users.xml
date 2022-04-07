@@ -34,9 +34,14 @@
 
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/loading_view"
+        android:padding="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/users_recycler_view"
-        android:background="@color/colorSecondaryVariant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_user"/>
