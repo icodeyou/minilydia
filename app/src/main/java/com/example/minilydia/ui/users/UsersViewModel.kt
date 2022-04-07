@@ -11,7 +11,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
-class UsersViewModel(private val iUsersRepository: IUsersRepository) : BaseViewModel() {
+class UsersViewModel(private val usersRepository: IUsersRepository) : BaseViewModel() {
 
     private val _users: MutableLiveData<Resource<PagedList<User>>> = MutableLiveData()
     val users: MutableLiveData<Resource<PagedList<User>>>
@@ -19,7 +19,7 @@ class UsersViewModel(private val iUsersRepository: IUsersRepository) : BaseViewM
 
     fun getUsers() {
         Timber.i("Executing GetUserListUseCase...")
-        iUsersRepository.getUserList()
+        usersRepository.getUserList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(

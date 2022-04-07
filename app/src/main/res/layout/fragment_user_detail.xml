@@ -10,7 +10,7 @@
         android:id="@+id/user_image_constraint"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/lightGrey">
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/detail_user_image"
             android:layout_width="150dp"

@@ -7,7 +7,6 @@ import com.example.minilydia.data.mapper.mapDomainUserToLocal
 import com.example.minilydia.domain.model.User
 import com.example.minilydia.domain.repository.local.IUsersLocalRepository
 import com.example.minilydia.domain.repository.remote.IUsersRemoteRepository
-import com.example.minilydia.ui.common.showLong
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -16,8 +15,8 @@ import timber.log.Timber
 import java.net.UnknownHostException
 
 class UsersBoundaryCallback(
-    private val iUsersLocalRepository: IUsersLocalRepository,
-    private val iUsersRemoteRepository: IUsersRemoteRepository
+    private val usersLocalRepository: IUsersLocalRepository,
+    private val usersRemoteRepository: IUsersRemoteRepository
 ) : PagedList.BoundaryCallback<User>() {
 
     private var nextPage = 1
@@ -38,7 +37,7 @@ class UsersBoundaryCallback(
         if (isRequestRunning) return
 
         isRequestRunning = true
-        iUsersLocalRepository.getUsersCountFromLocalDB()
+        usersLocalRepository.getUsersCountFromLocalDB()
             .flatMap { usersCount -> getUsersFromApi(usersCount) }
             .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.io())
@@ -57,7 +56,7 @@ class UsersBoundaryCallback(
     private fun getUsersFromApi(usersCount: Int): Single<List<UserRoomEntity>> {
         nextPage = (usersCount / DEFAULT_PAGE_SIZE) + 1
 
-        return iUsersRemoteRepository.getUsersFromApi(nextPage)
+        return usersRemoteRepository.getUsersFromApi(nextPage)
             .map { users -> users.map(mapDomainUserToLocal) }
             .doOnSuccess { users ->
                 saveUsersInDatabase(users)
@@ -72,7 +71,7 @@ class UsersBoundaryCallback(
 
     private fun saveUsersInDatabase(users: List<UserRoomEntity>) {
         if (users.isNotEmpty()) {
-            iUsersLocalRepository.saveUsersInLocalDB(users)
+            usersLocalRepository.saveUsersInLocalDB(users)
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .doOnComplete {

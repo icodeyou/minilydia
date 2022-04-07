@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.minilydia.R
 import com.example.minilydia.domain.model.User
-import com.example.minilydia.ui.common.extensions.capitalizeWords
 import com.facebook.drawee.view.SimpleDraweeView
 
 class UserDetailsFragment : Fragment(R.layout.fragment_user_detail) {

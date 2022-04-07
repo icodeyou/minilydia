@@ -6,9 +6,9 @@ import com.example.minilydia.domain.model.User
 import com.example.minilydia.domain.repository.remote.IUsersRemoteRepository
 import io.reactivex.Single
 
-class UsersRemoteRepositoryImpl(private val iUsersApi: IUsersApi): IUsersRemoteRepository {
+class UsersRemoteRepositoryImpl(private val usersApi: IUsersApi): IUsersRemoteRepository {
 
-    override fun getUsersFromApi(page: Int): Single<List<User>> = iUsersApi.getUsers(page)
+    override fun getUsersFromApi(page: Int): Single<List<User>> = usersApi.getUsers(page)
         .map { ApiResponse ->
             ApiResponse.results.map(mapRemoteUserToDomain)
         }

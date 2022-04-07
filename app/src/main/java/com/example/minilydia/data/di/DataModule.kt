@@ -47,11 +47,11 @@ fun provideUsersLocalDB(context: Context): UsersLocalDB = Room.databaseBuilder(
 ).fallbackToDestructiveMigration().build()
 
 fun provideRxPagedListBuilder(
-    iUsersLocalRepository: IUsersLocalRepository,
+    usersLocalRepository: IUsersLocalRepository,
     usersBoundaryCallback: UsersBoundaryCallback
 ): RxPagedListBuilder<Int, User> =
     RxPagedListBuilder(
-        iUsersLocalRepository.getUsersFromLocalDB(),
+        usersLocalRepository.getUsersFromLocalDB(),
         DataConstants.DEFAULT_PAGE_SIZE
     ).setBoundaryCallback(usersBoundaryCallback)
 
