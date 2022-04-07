@@ -18,7 +18,6 @@ class UsersViewModel(private val usersRepository: IUsersRepository) : BaseViewMo
         get() = _users
 
     fun getUsers() {
-        Timber.i("Executing GetUserListUseCase...")
         usersRepository.getUserList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/usersFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/usersFragment"
         android:name="com.example.minilydia.ui.users.UsersFragment"
-        android:label="fragment_home"
+        android:label="fragment_users_nav_label"
         tools:layout="@layout/fragment_users" >
         <action
             android:id="@+id/displayDetails"
@@ -21,7 +21,8 @@
     <fragment
         android:id="@+id/userDetailsFragment"
         android:name="com.example.minilydia.ui.userdetails.UserDetailsFragment"
-        android:label="UserDetailsFragment">
+        android:label="UserDetailsFragment"
+        tools:layout="@layout/fragment_user_detail" >
         <argument
             android:name="user"
             app:argType="com.example.minilydia.domain.model.User" />
