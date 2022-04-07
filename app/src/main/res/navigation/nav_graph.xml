@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.example.minilydia.ui.users.UsersFragment"
-        android:label="fragment_users_nav_label"
+        android:label="@string/title_users_fragment"
         tools:layout="@layout/fragment_users" >
         <action
             android:id="@+id/displayDetails"
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/userDetailsFragment"
         android:name="com.example.minilydia.ui.userdetails.UserDetailsFragment"
-        android:label="UserDetailsFragment"
+        android:label="@string/title_users_details_fragment"
         tools:layout="@layout/fragment_user_detail" >
         <argument
             android:name="user"
