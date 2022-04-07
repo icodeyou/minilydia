@@ -32,20 +32,43 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/detail_username_title"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/user_firstname"
-                android:textAppearance="@style/Text.Header3" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/default_margin">
 
-            <TextView
-                android:id="@+id/detail_user_firstname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/Text"
-                tools:text="Philippe"
-                android:layout_marginBottom="@dimen/default_margin"/>
+                <TextView
+                    android:id="@+id/detail_username_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_firstname"
+                    android:textAppearance="@style/Text.Header3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/detail_user_icon_gender"
+                    />
+
+                <TextView
+                    android:id="@+id/detail_user_firstname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Text"
+                    tools:text="Philippe"
+                    app:layout_constraintTop_toBottomOf="@id/detail_username_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/detail_user_icon_gender"/>
+
+                <ImageView
+                    android:id="@+id/detail_user_icon_gender"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    tools:src="@drawable/ic_female"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/detail_surname_title"

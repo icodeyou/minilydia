@@ -10,7 +10,7 @@ val mapRemoteUserToDomain: (UserEntity) -> User = { user ->
         user.login?.sha256 ?: "",
         user.name?.first?.replaceFirstChar(Char::titlecase) ?: "",
         user.name?.last?.capitalizeWords() ?: "",
-        user.gender?.capitalizeWords() ?: "",
+        user.gender ?: "",
         user.email ?: "",
         user.picture?.thumbnail ?: "",
         user.picture?.medium ?: "",
