@@ -5,6 +5,8 @@ import com.example.minilydia.data.entity.remote.UserEntity
 import com.example.minilydia.domain.model.User
 import com.example.minilydia.ui.common.extensions.capitalizeWords
 
+
+
 val mapRemoteUserToDomain: (UserEntity) -> User = { user ->
     User(
         user.login?.sha256 ?: "",
