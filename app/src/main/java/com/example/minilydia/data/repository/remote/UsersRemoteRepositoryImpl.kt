@@ -9,7 +9,7 @@ import io.reactivex.Single
 class UsersRemoteRepositoryImpl(private val usersApi: IUsersApi): IUsersRemoteRepository {
 
     override fun getUsersFromApi(page: Int): Single<List<User>> = usersApi.getUsers(page)
-        .map { ApiResponse ->
-            ApiResponse.results.map(mapRemoteUserToDomain)
+        .map { response ->
+            response.results.map(mapRemoteUserToDomain)
         }
 }
