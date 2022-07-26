@@ -43,15 +43,6 @@ class UsersFragment : Fragment(R.layout.fragment_users), ActionsOnListUsers {
             layoutManager = LinearLayoutManager(context)
             adapter = usersAdapter
         }
-
-        // TODO : Uncomment this line when using Paging 3
-        /*usersAdapter.addLoadStateListener { loadState ->
-            val isEmptyView = loadState.source.refresh is LoadState.NotLoading
-                    && loadState.append.endOfPaginationReached
-                    && usersAdapter.itemCount < 1
-            recyclerView.visibility = if (isEmptyView) View.GONE else View.VISIBLE
-            emptyView.visibility = if (isEmptyView) View.VISIBLE else View.GONE
-        }*/
     }
 
     private fun observeUsers(view: View) {

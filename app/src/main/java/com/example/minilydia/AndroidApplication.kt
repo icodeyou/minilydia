@@ -19,7 +19,7 @@ class AndroidApplication : Application() {
         Timber.plant(Timber.DebugTree())
 
         // Initialize Fresco
-        Fresco.initialize(this);
+        Fresco.initialize(this)
 
         // Initialize Koin
         startKoin {
